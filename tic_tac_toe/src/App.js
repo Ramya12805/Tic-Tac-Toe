@@ -2,11 +2,15 @@ import { useState } from 'react';
 import "./App.css";
 function Square({ value, onSquareClick }) {
   return (
-    <button className="square" onClick={onSquareClick}>
+    <button 
+      className={`square ${value === 'X' ? 'X' : value === 'O' ? 'O' : ''}`} 
+      onClick={onSquareClick}
+    >
       {value}
     </button>
   );
 }
+
 
 function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
